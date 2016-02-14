@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<!--
+	Retrospect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Mohn Lab - University of British Columbia</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+		<link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />	
+		<script type="text/javascript" src="assets/js/capty/js/jquery.capty.min.js"></script>
+
+
+<script>
+			var currentBackground = 0;
+			var otherBackground = 1;
+			var backgrounds = [];
+			backgrounds[0] = 'images/dock.jpg';
+			backgrounds[1] = 'images/channel2.jpg';
+			backgrounds[2] = 'images/gel.jpg';
+
+			function changeBackground() {
+			    currentBackground++;
+			    otherBackground ++;
+			    if(currentBackground > 2 ) currentBackground = 0;
+
+			    $('#banner').fadeOut(500,function() {
+			        $('#banner').css({
+			            'background-image' : "url('" + backgrounds[currentBackground] + "')"
+			        });
+			        $('#banner').fadeIn(500);
+			    });
+
+			    setTimeout(changeBackground, 5000);
+			}
+
+			$(document).ready(function() {
+			    setTimeout(changeBackground, 5000);        
+			});
+
+</script>
+
+<script type="text/javascript">
+		$(function() {
+			var def = "";
+			for (i = 0; i < 12; i++) {
+			    def = '#default-' + i.toString();
+			    $(def).capty();
+			}
+		});
+</script>
+
+	</head>
+
+	<body class="landing">
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="index.html">Mohn Lab Home</a></h1>
+				<a href="#nav">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="bill.html">Bill Mohn</a></li>
+					<li><a href="people.html">People</a></li>
+					<li><a href="research.html">Research</a></li>
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+
+				<i class="icon fa-flask"></i>
+				<h2>The Mohn Lab</h2>
+				<p>Microbial Ecology and Physiology</p>
+				<ul class="actions">
+					<li><a href="#contact" class="button big special">Contact Information</a></li>
+				</ul>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1">
+				<div class="inner">
+
+					<article class="feature right">
+						<span class="image"><a href="bill.html"><img src="images/bill_lowres.jpg" alt="" /></a></span>
+						<div class="content">
+							<i class="icon fa-bicycle"></i>
+							<h2>Bill Mohn</h2>
+							<p>Professor, Department of Microbiology &amp; Immunology, University of British Columbia</p>
+							<ul class="actions">
+								<li>
+									<a href="bill.html" class="button alt">More</a>
+								</li>
+							</ul>
+						</div>
+					</article>
+
+					<article class="feature left">
+						<span class="image"><a href="people.html"><img src="images/group2012.jpg" alt="" /></a></span>
+						<div class="content">
+							<i class="icon fa-users"></i>
+							<h2>Mohn Lab People</h2>
+							<p>Students, Post-Docs, Technicians and Alumni</p>
+							<ul class="actions">
+								<li>
+									<a href="people.html" class="button alt">More</a>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article class="feature right">
+						<span class="image"><img src="images/resLTSPlrg.jpg" alt="" /></span>
+						<div class="content">
+							<i class="icon fa-bar-chart"></i>
+							<h2>Mohn Lab Research Highlights</h2>
+							<p>Human Microbiome, Forest Soil Microbial Ecology, Genomics of <i>Rhodococcus</i> sp. RHA1, Bioremediation and Bioreclaimation</p>
+							<ul class="actions">
+								<li>
+									<a href="#" class="button alt">More</a>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article class="feature left">
+						<span class="image"><a href="publications.html"><img src="images/otus1.jpg" alt="" /></a></span>
+						<div class="content">
+							<i class="icon fa-file-text"></i>
+							<h2>Mohn Lab Publications</h2>
+							<p>List of current Mohn Lab publications</p>
+							<ul class="actions">
+								<li>
+									<a href="publications.html" class="button alt">More</a>
+								</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</section>
+
+
+		<!-- Three -->
+			<section id="two" class="wrapper special">
+				<div class="inner">
+					<i class="icon fa-camera-retro"></i>
+					<header class="major narrow">
+						<h2>Mohn Lab Photos</h2>
+					</header>
+					<div class="image-grid">
+						<img id="default-1" height="200" width="357"src="images/group1996s.jpg" alt="Fishing on the Sunshine Coast, 1996"/>
+						<img id="default-2" height="200" width="357" src="images/group1998s.jpg" alt="Test captions 1998"/></a>
+						<img id="default-3" height="200" width="357" src="images/group2001s.jpg" alt="" /></a>
+						<img id="default-4" height="200" width="357" src="images/group2002s.jpg" alt="" /></a>
+						<img id="default-5" height="200" width="357" src="images/group2003s.jpg" alt="" />
+						<img id="default-6" height="200" width="357" src="images/group2007s.jpg" alt="" />
+						<img id="default-7" height="200" width="357" src="images/group2009s.jpg" alt="" />
+						<img id="default-8" height="200" width="357" src="images/group2012s.jpg" alt="" />
+						<img id="default-9" height="200" width="357" src="images/bill_small.jpg" alt="" />
+						<img id="default-10" height="200" width="357" src="images/bill_kayak_small.jpg" alt="" />
+						<img id="default-11" height="200" width="357" src="images/groupdinner.jpg" alt="" />
+						<img id="default-12" height="200" width="357" src="images/groupMEGs.jpg" alt="" />
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Three -->
+			<section id="three" class="wrapper style3 special">
+				<div class="inner">
+					<header class="major narrow	">
+					</header>
+
+				</div>
+			</section>
+
+		<!-- Four -->
+			<section id="four" class="wrapper style2 special">
+				<div class="inner">
+				<script>
+				L.mapbox.accessToken = 'pk.eyJ1IjoiZGxldnlib290aCIsImEiOiJabVFFVVNRIn0.tsKNjtkrsxQiYtrtkv4i1Q';
+				var map = L.mapbox.map('three', 'dlevybooth.m3g0ik6c').setView([49.262533, -123.243878], 17); 
+				map.scrollWheelZoom.disable();
+
+				</script>					
+
+					<header class="major narrow" id="contact">
+						<i class="icon fa-bicycle"></i>
+						<h2>Contact</h2>
+						<p>Dr. William Mohn</p>
+						<p>Room 4501, 2350 Health Sciences Mall, Life Sciences Centre, </p>
+						<p>University of British Columbia, Vancouver, BC, Canada, V6T 1Z3</p>
+						<p>Phone: 604-822-4285; Fax: 604-822-6041</p>
+						<p>E-Mail: wmohn(at)interchange.ubc.ca</p>
+					</header>
+					<div id="ubc">
+					<a href="https://www.ubc.ca/"><img height="100" src="images/ubc.png"></a>
+					</div>
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+<!-- 				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook">
+							<span class="label">Facebook</span>
+						</a></li>
+						<li><a href="#" class="icon fa-twitter">
+							<span class="label">Twitter</span>
+						</a></li>
+						<li><a href="#" class="icon fa-instagram">
+							<span class="label">Instagram</span>
+						</a></li>
+						<li><a href="#" class="icon fa-linkedin">
+							<span class="label">LinkedIn</span>
+						</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled.</li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a>.</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a>.</li>
+					</ul>
+				</div> -->
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
