@@ -573,7 +573,7 @@
           <attvalue for="times_cited" value="268"></attvalue>
           <attvalue for="number_of_authored_works" value="3"></attvalue>
           <attvalue for="year_start" value="2007"></attvalue>
-          <attvalue for="area" value="Steriod Metabolism"></attvalue>
+          <attvalue for="area" value="Steroid Metabolism"></attvalue>
           <attvalue for="year_end" value="2020"></attvalue>
         </attvalues>
         <viz:size value="50.0"></viz:size>
@@ -837,7 +837,7 @@
           <attvalue for="times_cited" value="88"></attvalue>
           <attvalue for="number_of_authored_works" value="2"></attvalue>
           <attvalue for="year_start" value="2009"></attvalue>
-          <attvalue for="area" value="Steriod Metabolism"></attvalue>
+          <attvalue for="area" value="Steroid Metabolism"></attvalue>
           <attvalue for="year_end" value="2020"></attvalue>
         </attvalues>
         <viz:size value="50.0"></viz:size>
@@ -861,7 +861,7 @@
           <attvalue for="times_cited" value="334"></attvalue>
           <attvalue for="number_of_authored_works" value="3"></attvalue>
           <attvalue for="year_start" value="2007"></attvalue>
-          <attvalue for="area" value="Steriod Metabolism"></attvalue>
+          <attvalue for="area" value="Steroid Metabolism"></attvalue>
           <attvalue for="year_end" value="2020"></attvalue>
         </attvalues>
         <viz:size value="50.0"></viz:size>
@@ -873,7 +873,7 @@
           <attvalue for="times_cited" value="58"></attvalue>
           <attvalue for="number_of_authored_works" value="5"></attvalue>
           <attvalue for="year_start" value="2012"></attvalue>
-          <attvalue for="area" value="Steriod Metabolism"></attvalue>
+          <attvalue for="area" value="Steroid Metabolism"></attvalue>
           <attvalue for="year_end" value="2020"></attvalue>
         </attvalues>
         <viz:size value="50.0"></viz:size>
@@ -957,7 +957,7 @@
           <attvalue for="times_cited" value="317"></attvalue>
           <attvalue for="number_of_authored_works" value="2"></attvalue>
           <attvalue for="year_start" value="2004"></attvalue>
-          <attvalue for="area" value="Steriod Metabolism"></attvalue>
+          <attvalue for="area" value="Steroid Metabolism"></attvalue>
           <attvalue for="year_end" value="2020"></attvalue>
         </attvalues>
         <viz:size value="50.0"></viz:size>
