@@ -1,73 +1,28 @@
 <html>
+<head>
+<link href="rainbow-dev-custom/themes/github.css" rel="stylesheet" type="text/css">
+
+</head>
 <body>
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <!-- you can create a custom build with specific languages
+this should go before the closing </body> -->
+<script src="rainbow-dev-custom/rainbow.min.js"></script>
+<script src="rainbow-dev-custom/language/generic.js"></script>
+<script src="assets/js/language/shell.js"></script>
+<script src="assets/js/language/python.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <div id="title">
   <h2>From Raw reads to OTUs</h2>
-  <p>PE-joining, quality filtering and OTU picking in QIIME</p>
+  <p>Paired-end read joining, quality filtering and OTU picking of Illumina MiSeq data in QIIME</p>
   <p>2015 DNA samples amplied with EMP 16S from Calvert Island (BIOMES), Juneau (NADP) and RNA from Calvert Island (BIOMES-R)</p>
 </div>
 
-<div id="main">
-  <h2>Bioinformatics pipeline</h2>
-  <p> 1. Using Flash to join paired end reads:</p>
-  <pre><code>
-FLASH-1.2.11/flash 
--M 100 #min overlap
--d /home/david/David_output 
--o "out" 
-/home/david/David/BIOMES1001_S1_L001_R1_001.fastq.gz 
-/home/david/David/BIOMES1001_S1_L001_R2_001.fastq.gz
-  </pre></code>
+<div id="chart">
 
-  <p> 2. USEARCH Quality Filtering:</p>
-  <a href="http://www.earthmicrobiome.org/emp-standard-protocols/16s-taxonomic-assignments/">EMP Guidelines</a>
-  <ol>
-    <li>Identify the first quality score below Q3 and truncate the read just prior to that position.</li>
-    <li>Determine if the truncated sequence is at least 75% of the length of the input sequence: if yes, retain the truncated read; if no, discard the read.</li> 
-    <li>Determine if the truncated sequence has any N (i.e., ambiguous base call) characters: if yes, discard the read; if no, retain the read.</li> 
-</ol>
-
-  <pre><code>
-usearch8 
--fastq_filter David_output/joined_fastq/BIOMES1001.extendedFrags.fastq 
--fastq_trunclen 220 #truncate to 220bp *should have been fewer
--fastq_truncqual 3 #Quality score greater than 3
--fastq_maxns 1 #N less than 1
--fastaout David_output/joined_filtered_fasta/BIOMES1001.fasta
-  </pre></code>
-
-    <p> 3. Label and join FASTQ files for QIIME pipeline:</p>
-  <pre><code>
-add_qiime_labels.py 
---fasta_dir ~/David_output/joined_filtered_fasta
---mapping_fp DLB_2015_sample_map.txt 
---filename_column InputFileName 
---output_dir ~/David_output/joined_filtered_fasta_combined
-  </pre></code>
-
-     <p> 4. OTU open reference picking:</p>
-  <pre><code>
-pick_open_reference_otus.py 
---output_dir David_output/otus/ 
---input_fps David_output/joined_filtered_fasta_combined/combined_seqs.fna 
---parameter_fp uc_fast_params.txt
-  </pre></code>
-
-      <p> 5. Diversity Analysis:</p>
-  <pre><code>
-core_diversity_analyses.py 
--o David_output/cdout/ 
---recover_from_failure 
--c "Site,Plot" 
--i David_output/otus/otu_table_mc2_w_tax_no_pynast_failures.biom 
--m DLB_2015_sample_map.txt 
--t David_output/otus/rep_set.tre 
--e 1000 # 1000 OTU minimum
-  </pre></code>
-
-
-<div id="sankey_multiple" style="width: 900px; height: 600px;"></div>
+<h2>Sankey diagram (AKA 'ribbon plot') of bioinformatics pipeline</h2>
+<p>Plot showing the journey from raw Illumina MiSeq reads to annotated OTUs. See below for information about the bioinformatics pipeline and scripts used.</p>  
+<div id="sankey_multiple" style="width: 1000px; height: 600px;"></div>
 
 <script type="text/javascript">
   google.charts.load("current", {packages:["sankey"]});
@@ -115,6 +70,68 @@ core_diversity_analyses.py
     chart.draw(data, options);
    }
 </script>
+</div>
+
+
+<div id="main">
+  <h2>Bioinformatics pipeline</h2>
+  <p> 1. Using Flash to join paired end reads:</p>
+  <pre><code data-language="shell">
+FLASH-1.2.11/flash 
+-M 100 #min overlap
+-d /home/david/David_output 
+-o "out" 
+/home/david/David/BIOMES1001_S1_L001_R1_001.fastq.gz 
+/home/david/David/BIOMES1001_S1_L001_R2_001.fastq.gz
+  </pre></code>
+
+  <p> 2. USEARCH Quality Filtering:</p>
+  <a href="http://www.earthmicrobiome.org/emp-standard-protocols/16s-taxonomic-assignments/">EMP Guidelines</a>
+  <ol>
+    <li>Identify the first quality score below Q3 and truncate the read just prior to that position.</li>
+    <li>Determine if the truncated sequence is at least 75% of the length of the input sequence: if yes, retain the truncated read; if no, discard the read.</li> 
+    <li>Determine if the truncated sequence has any N (i.e., ambiguous base call) characters: if yes, discard the read; if no, retain the read.</li> 
+</ol>
+
+  <pre><code data-language="shell">
+usearch8 
+-fastq_filter David_output/joined_fastq/BIOMES1001.extendedFrags.fastq 
+-fastq_trunclen 220 #truncate to 220bp *should have been fewer
+-fastq_truncqual 3 #Quality score greater than 3
+-fastq_maxns 1 #N less than 1
+-fastaout David_output/joined_filtered_fasta/BIOMES1001.fasta
+  </pre></code>
+
+    <p> 3. Label and join FASTQ files for QIIME pipeline:</p>
+  <pre><code data-language="shell">
+add_qiime_labels.py 
+--fasta_dir ~/David_output/joined_filtered_fasta
+--mapping_fp DLB_2015_sample_map.txt 
+--filename_column InputFileName 
+--output_dir ~/David_output/joined_filtered_fasta_combined
+  </pre></code>
+
+     <p> 4. OTU open reference picking:</p>
+  <pre><code data-language="shell">
+pick_open_reference_otus.py 
+--output_dir David_output/otus/ 
+--input_fps David_output/joined_filtered_fasta_combined/combined_seqs.fna 
+--parameter_fp uc_fast_params.txt
+  </pre></code>
+
+      <p> 5. Diversity Analysis:</p>
+  <pre><code data-language="shell">
+core_diversity_analyses.py 
+-o David_output/cdout/ 
+--recover_from_failure 
+-c "Site,Plot" 
+-i David_output/otus/otu_table_mc2_w_tax_no_pynast_failures.biom 
+-m DLB_2015_sample_map.txt 
+-t David_output/otus/rep_set.tre 
+-e 1000 # 1000 OTU minimum
+  </pre></code>
+
+
 
 </body>
 </html>
