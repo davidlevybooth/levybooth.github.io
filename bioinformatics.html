@@ -1,13 +1,22 @@
+<!DOCTYPE HTML>
+
 <html>
-<head>
-<link href="assets/css/github.css" rel="stylesheet" type="text/css">
-<style> 
-svg path:hover {
-    fill: #C14347;
-}
-</style>
-</head>
-<body>
+	<head>
+		<title>Bioinformatics Ribbon Diagram</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="assets/css/github.css" rel="stylesheet" type="text/css">
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+	
+	</head>
+
+	<body>
   <!-- you can create a custom build with specific languages
 this should go before the closing </body> -->
 <script src="assets/js/rainbow.min.js"></script>
@@ -16,10 +25,27 @@ this should go before the closing </body> -->
 <script src="assets/js/python.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+		<!-- Header -->
+			<header id="header">
+			</header>
+
+
+<!-- Main -->
+	<section id="main" class="wrapper">
+	<div id ="pub_title">
+	<i class="icon fa-bar-chart"></i>
+	<h2>Bioinformatics Workflow: From Raw reads to OTUs</h2>
+	</div>
+	</section>
+
+
+<!-- Main -->
+	<section id="main" class="wrapper">
+	<div class="container">
+<!-- begin publications list -->
+
 <div id="title">
-  <h2>From Raw reads to OTUs</h2>
-  <p>Paired-end read joining, quality filtering and OTU picking of Illumina MiSeq data in QIIME</p>
-  <p>2015 DNA samples amplied with EMP 16S from Calvert Island (BIOMES), Juneau (NADP) and RNA from Calvert Island (BIOMES-R)</p>
+  <p>Paired-end read joining, quality filtering and OTU picking of Illumina MiSeq data in QIIME. 2015 DNA samples amplied with EMP 16S from Calvert Island (BIOMES), Juneau (NADP) and RNA from Calvert Island (BIOMES-R).</p>
 </div>
 
 <div id="chart">
@@ -63,7 +89,6 @@ this should go before the closing </body> -->
        [ 'Filtered BIOMES RNA reads', 'Unclassified', 2229 ]
     ]);
     // Set chart options
-
     var edge_colors = [
     '#28E2F7', //1. r_BIOMES
     '#105B63', // 2. j_BIOMES (4)
@@ -81,7 +106,6 @@ this should go before the closing </body> -->
     '#261724', // 14. filtered
     '#261724', // 15. unclassifed
      ];
-
     var node_colors = [
     '#0C4147', //1. r_BIOMES
     '#105B63', // 2. j_BIOMES (4)
@@ -100,7 +124,6 @@ this should go before the closing </body> -->
     '#261724', // 15. unclassifed
      ];
     
-
     var options = {
       width: 1000,
       height: 500, 
@@ -180,7 +203,40 @@ core_diversity_analyses.py
 -e 1000 # 1000 OTU minimum
   </code></pre>
 
+				</div>
+			</section>
 
+		<!-- Footer -->
+			<footer id="footer">
+				<!-- <div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook">
+							<span class="label">Facebook</span>
+						</a></li>
+						<li><a href="#" class="icon fa-twitter">
+							<span class="label">Twitter</span>
+						</a></li>
+						<li><a href="#" class="icon fa-instagram">
+							<span class="label">Instagram</span>
+						</a></li>
+						<li><a href="#" class="icon fa-linkedin">
+							<span class="label">LinkedIn</span>
+						</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&amp;copy; Untitled.</li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a>.</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a>.</li>
+					</ul>
+				</div> -->
+			</footer>
 
-</body>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
