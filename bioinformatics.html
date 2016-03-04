@@ -37,30 +37,30 @@ this should go before the closing </body> -->
     data.addColumn('string', 'To');
     data.addColumn('number', 'Sequences');
     data.addRows([
-       [ 'r_BIOMES', 'j_BIOMES', 49376 ],
-       [ 'r_NADP', 'j_NADP', 32918 ],
-       [ 'r_BIOMES-R', 'j_BIOMES-R', 32853 ],
-       [ 'r_BIOMES', 'Unjoined', 2933 ],
-       [ 'r_NADP', 'Unjoined', 1684 ],
-       [ 'r_BIOMES-R', 'Unjoined', 1857 ],
-       [ 'Unjoined', 'o_BIOMES', 1 ],
-       [ 'Unjoined', 'o_NADP', 1 ],
-       [ 'Unjoined', 'o_BIOMES-R', 1 ],
-       [ 'j_BIOMES', 'f_BIOMES', 38474 ],
-       [ 'j_NADP', 'f_NADP', 26015 ],
-       [ 'j_BIOMES-R', 'f_BIOMES-R', 26194 ],
-       [ 'j_BIOMES', 'Filtered', 10902 ],
-       [ 'j_NADP', 'Filtered', 6903 ],
-       [ 'j_BIOMES-R', 'Filtered', 6658 ],
-       [ 'Filtered', 'o_BIOMES', 1 ],
-       [ 'Filtered', 'o_NADP', 1 ],
-       [ 'Filtered', 'o_BIOMES-R', 1 ],
-       [ 'f_BIOMES', 'o_BIOMES', 27818 ],
-       [ 'f_NADP', 'o_NADP', 21742 ],
-       [ 'f_BIOMES-R', 'o_BIOMES-R', 23964 ],
-       [ 'f_BIOMES', 'Unclassified', 10656 ],
-       [ 'f_NADP', 'Unclassified', 4272 ],
-       [ 'f_BIOMES-R', 'Unclassified', 2229 ]
+       [ 'Raw BIOMES reads', 'Joined BIOMES reads', 49376 ],
+       [ 'Raw NADP reads', 'Joined NADP reads', 32918 ],
+       [ 'Raw BIOMES RNA reads', 'Joined BIOMES RNA reads', 32853 ],
+       [ 'Raw BIOMES reads', 'Unjoined', 2933 ],
+       [ 'Raw NADP reads', 'Unjoined', 1684 ],
+       [ 'Raw BIOMES RNA reads', 'Unjoined', 1857 ],
+       [ 'Unjoined', 'BIOMES OTUs', 1 ],
+       [ 'Unjoined', 'NADP OTUs', 1 ],
+       [ 'Unjoined', 'BIOMES RNA OTUs', 1 ],
+       [ 'Joined BIOMES reads', 'Filtered BIOMES reads', 38474 ],
+       [ 'Joined NADP reads', 'Filtered NADP reads', 26015 ],
+       [ 'Joined BIOMES RNA reads', 'Filtered BIOMES RNA reads', 26194 ],
+       [ 'Joined BIOMES reads', 'Filtered', 10902 ],
+       [ 'Joined NADP reads', 'Filtered', 6903 ],
+       [ 'Joined BIOMES RNA reads', 'Filtered', 6658 ],
+       [ 'Filtered', 'BIOMES OTUs', 1 ],
+       [ 'Filtered', 'NADP OTUs', 1 ],
+       [ 'Filtered', 'BIOMES RNA OTUs', 1 ],
+       [ 'Filtered BIOMES reads', 'BIOMES OTUs', 27818 ],
+       [ 'Filtered NADP reads', 'NADP OTUs', 21742 ],
+       [ 'Filtered BIOMES RNA reads', 'BIOMES RNA OTUs', 23964 ],
+       [ 'Filtered BIOMES reads', 'Unclassified', 10656 ],
+       [ 'Filtered NADP reads', 'Unclassified', 4272 ],
+       [ 'Filtered BIOMES RNA reads', 'Unclassified', 2229 ]
     ]);
     // Set chart options
 
@@ -71,15 +71,15 @@ this should go before the closing </body> -->
     '#7F6927', // 4. j_NADP (5)
     '#FF6244', // 5. r_BIOMES-R
     '#853323', // 6. j biomes r
-    'grey',  // 7. unjoined
+    '#261724',  // 7. unjoined
     '#28E2F7', // 8. 0_biomes - because of unjoined
     '#FFD34E',  // 9. o nadp
     '#FF6244', // 10. o biomes r
     '#1C9FAD',  // 11. f biomes
     '#C4A23C', // 12. f nadp
     '#BD4932', // 13. f biomes r
-    'grey', // 14. filtered
-    'grey', // 15. unclassifed
+    '#261724', // 14. filtered
+    '#261724', // 15. unclassifed
      ];
 
     var node_colors = [
