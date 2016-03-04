@@ -1,6 +1,6 @@
 
 /**
- * This is an example on how to use sigma filters plugin on a real-world graph.
+ * This is an example of a network graph 
  */
 var filter;
 
