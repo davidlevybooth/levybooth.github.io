@@ -132,7 +132,7 @@ function updatePane (graph, filter) {
 // Graph attributes from Sci2 program, edited with python
 // Graphed using Gephi 
 
-sigma.parsers.gexf('data/mohn_dynamic.gexf', {
+sigma.parsers.gexf('mohn_dynamic.gexf', {
   container: 'graph-container',
   settings: {
     edgeColor: 'default',
