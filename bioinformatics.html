@@ -132,7 +132,7 @@ FLASH-1.2.11/flash
 -o "out" 
 /home/david/David/BIOMES1001_S1_L001_R1_001.fastq.gz 
 /home/david/David/BIOMES1001_S1_L001_R2_001.fastq.gz
-  </pre></code>
+  </code></pre>
 
   <p> 2. USEARCH Quality Filtering:</p>
   <a href="http://www.earthmicrobiome.org/emp-standard-protocols/16s-taxonomic-assignments/">EMP Guidelines</a>
@@ -149,7 +149,7 @@ usearch8
 -fastq_truncqual 3 #Quality score greater than 3
 -fastq_maxns 1 #N less than 1
 -fastaout David_output/joined_filtered_fasta/BIOMES1001.fasta
-  </pre></code>
+  </code></pre>
 
     <p> 3. Label and join FASTQ files for QIIME pipeline:</p>
   <pre><code data-language="shell">
@@ -158,7 +158,7 @@ add_qiime_labels.py
 --mapping_fp DLB_2015_sample_map.txt 
 --filename_column InputFileName 
 --output_dir ~/David_output/joined_filtered_fasta_combined
-  </pre></code>
+  </code></pre>
 
      <p> 4. OTU open reference picking:</p>
   <pre><code data-language="shell">
@@ -166,7 +166,7 @@ pick_open_reference_otus.py
 --output_dir David_output/otus/ 
 --input_fps David_output/joined_filtered_fasta_combined/combined_seqs.fna 
 --parameter_fp uc_fast_params.txt
-  </pre></code>
+  </code></pre>
 
       <p> 5. Diversity Analysis:</p>
   <pre><code data-language="shell">
@@ -178,7 +178,7 @@ core_diversity_analyses.py
 -m DLB_2015_sample_map.txt 
 -t David_output/otus/rep_set.tre 
 -e 1000 # 1000 OTU minimum
-  </pre></code>
+  </code></pre>
 
 
 
