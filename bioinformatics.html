@@ -1,7 +1,11 @@
 <html>
 <head>
 <link href="rainbow-dev-custom/themes/github.css" rel="stylesheet" type="text/css">
-
+<style> 
+svg path:hover {
+    fill: #C14347;
+}
+</style>
 </head>
 <body>
   <!-- you can create a custom build with specific languages
@@ -58,13 +62,58 @@ this should go before the closing </body> -->
        [ 'f_NADP', 'Unclassified', 4272 ],
        [ 'f_BIOMES-R', 'Unclassified', 2229 ]
     ]);
-
     // Set chart options
+
+    var edge_colors = [
+    '#28E2F7', //1. r_BIOMES
+    '#105B63', // 2. j_BIOMES (4)
+    '#FFD34E', // 3. r_NADP (2)
+    '#7F6927', // 4. j_NADP (5)
+    '#FF6244', // 5. r_BIOMES-R
+    '#853323', // 6. j biomes r
+    'grey',  // 7. unjoined
+    '#28E2F7', // 8. 0_biomes - because of unjoined
+    '#FFD34E',  // 9. o nadp
+    '#FF6244', // 10. o biomes r
+    '#1C9FAD',  // 11. f biomes
+    '#C4A23C', // 12. f nadp
+    '#BD4932', // 13. f biomes r
+    'grey', // 14. filtered
+    'grey', // 15. unclassifed
+     ];
+
+    var node_colors = [
+    '#0C4147', //1. r_BIOMES
+    '#105B63', // 2. j_BIOMES (4)
+    '#524919', // 3. r_NADP (2)
+    '#7F6927', // 4. j_NADP (5)
+    '#4F1E15', // 5. r_BIOMES-R
+    '#853323', // 6. j biomes r
+    '#261724',  // 7. unjoined
+    '#28E2F7', // 8. 0_biomes - because of unjoined
+    '#FFD34E',  // 9. o nadp
+    '#FF6244', // 10. o biomes r
+    '#1C9FAD',  // 11. f biomes
+    '#C4A23C', // 12. f nadp
+    '#BD4932', // 13. f biomes r
+    '#261724', // 14. filtered
+    '#261724', // 15. unclassifed
+     ];
+    
+
     var options = {
       width: 1000,
-      height: 500
+      height: 500, 
+      sankey: {
+        node: {
+          colors: node_colors
+        },
+        link: {
+          colorMode: 'gradient',
+          colors: edge_colors
+        }
+      }
     };
-
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
     chart.draw(data, options);
